@@ -1,15 +1,13 @@
-
-
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 a {
@@ -23,10 +21,10 @@ img {
 }
 
 @font-face {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   src: local("MontserratRegular"),
-    url('../fonts/MontserratRegular.woff2') format('woff2'),
-    url('../fonts/MontserratRegular.woff') format('woff');
+    url("../fonts/MontserratRegular.woff2") format("woff2"),
+    url("../fonts/MontserratRegular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -35,8 +33,8 @@ img {
 @font-face {
   font-family: "Montserrat";
   src: local("MontserratMedium"),
-    url('../fonts/MontserratMedium.woff2') format('woff2'),
-    url('../fonts/MontserratMedium.woff') format('woff');
+    url("../fonts/MontserratMedium.woff2") format("woff2"),
+    url("../fonts/MontserratMedium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -45,8 +43,8 @@ img {
 @font-face {
   font-family: "Montserrat";
   src: local("MontserratSemiBold"),
-    url('../fonts/MontserratSemiBold.woff2') format('woff2'),
-    url('../fonts/MontserratSemiBold.woff') format('woff');
+    url("../fonts/MontserratSemiBold.woff2") format("woff2"),
+    url("../fonts/MontserratSemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -55,23 +53,23 @@ img {
 @font-face {
   font-family: "Montserrat";
   src: local("MontserratBold"),
-    url('../fonts/MontserratBold.woff2') format('woff2'),
-    url('../fonts/MontserratBold.woff') format('woff');
+    url("../fonts/MontserratBold.woff2") format("woff2"),
+    url("../fonts/MontserratBold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --white: #FFFFFF;
+  --white: #ffffff;
   --black: #000000;
-  --red: #FF6464;
-  --light-red: #FF9696;
+  --red: #ff6464;
+  --light-red: #ff9696;
 }
 
 body {
   min-width: 320px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
@@ -94,11 +92,16 @@ body {
 
 .link {
   cursor: pointer;
-  -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-text-decoration 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-text-decoration 0.3s ease-in-out;
-  -o-transition: text-decoration 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  transition: text-decoration 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  transition: text-decoration 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out, -webkit-text-decoration 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    -webkit-text-decoration 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    -webkit-text-decoration 0.3s ease-in-out;
+  -o-transition: text-decoration 0.3s ease-in-out, color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  transition: text-decoration 0.3s ease-in-out, color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+  transition: text-decoration 0.3s ease-in-out, color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out, -webkit-text-decoration 0.3s ease-in-out;
 }
 
 .link:focus {
@@ -109,7 +112,7 @@ body {
 .link:hover {
   text-decoration: underline;
   -webkit-text-decoration-color: var(--red);
-          text-decoration-color: var(--red);
+  text-decoration-color: var(--red);
   text-decoration-thickness: 2px;
   text-underline-offset: 8px;
   outline: none;
@@ -158,8 +161,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
   gap: 33px;
   font-weight: 600;
 }
@@ -211,9 +214,12 @@ body {
   color: var(--white);
   background-color: var(--red);
   cursor: pointer;
-  -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
-  -o-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
+  -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    outline 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    outline 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    outline 0.3s ease-in-out;
 }
 
 .hero__link:focus {
@@ -245,6 +251,7 @@ body {
 
 .works__title {
   margin-bottom: 60px;
+  /* word-break: break-all; */
 }
 
 .works__list {
@@ -253,7 +260,7 @@ body {
   display: flex;
   gap: var(--gap);
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   --offsets: 1;
   --gap: 50px;
 }
@@ -288,14 +295,14 @@ body {
   border: none;
 }
 
-  .works__link::before {
+.works__link::before {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  content: '';
-  }
+  content: "";
+}
 
 .works__img {
   align-self: center;
@@ -333,15 +340,15 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   gap: 26px;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .footer__descr {
@@ -356,11 +363,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   gap: 15px;
   font-size: 24px;
   font-weight: 600;
@@ -378,8 +385,12 @@ body {
 }
 
 @keyframes fadeIn {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .main-title {
@@ -387,14 +398,19 @@ body {
   animation-duration: 2s;
 }
 
-
 .main-title:after {
-  content: '|';
+  content: "|";
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0% {opacity: 1;}
-  50% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -254,6 +254,10 @@ body {
   /* word-break: break-all; */
 }
 
+.react-work {
+  margin-bottom: 50px;
+}
+
 .works__list {
   display: -webkit-box;
   display: -ms-flexbox;

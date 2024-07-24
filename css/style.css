@@ -275,6 +275,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 24px;
+  width: 100%;
   border-radius: 25px;
   -webkit-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
   -o-transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -417,4 +418,10 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+/* auto-world-js */
+
+.auto-world-js {
+  display: none;
 }

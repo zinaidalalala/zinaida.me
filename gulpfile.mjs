@@ -36,17 +36,17 @@ const htmlMinify = () => {
     .pipe(browserSync.stream())
 };
 
-const svgSprites = () => {
-  return src('src/images/svg/**/*.svg')
-    .pipe(svgSprite({
-      mode: {
-        stack: {
-          sprite: '../sprite.svg'
-        }
-      }
-    }))
-    .pipe(dest('dist/images'))
-}
+// const svgSprites = () => {
+//   return src('src/images/svg/**/*.svg')
+//     .pipe(svgSprite({
+//       mode: {
+//         stack: {
+//           sprite: '../sprite.svg'
+//         }
+//       }
+//     }))
+//     .pipe(dest('dist/images'))
+// }
 
 const images = () => {
   return src([
@@ -97,15 +97,16 @@ const watchFiles = () => {
 
 watch('src/**/*.html', htmlMinify)
 watch('src/styles/**/*css', styles)
-watch('src/images/svg/**/*.svg', svgSprites)
+// watch('src/images/svg/**/*.svg', svgSprites)
 watch('src/images/**/*.{jpg,jpeg,png,svg,webp}', images);
 watch('src/js/**/*.js', scripts);
 watch('src/js/lazyload.min.js', toolScripts);
 watch('src/fonts/**/*', minifyFonts)
 
 
-export const stylesTask = styles;
-export const htmlMinifyTask = htmlMinify;
-export const scriptsTask = scripts;
-export default series(clean, htmlMinify, styles, svgSprites, images, scripts, toolScripts, minifyFonts, watchFiles);
+export const dev = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts, watchFiles);
+
+export const build = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts);
+
+export default dev;
 

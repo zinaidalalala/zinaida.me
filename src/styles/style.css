@@ -389,6 +389,12 @@ body {
   gap: 35px;
 }
 
+.social__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

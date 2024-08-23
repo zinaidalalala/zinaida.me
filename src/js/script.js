@@ -11,6 +11,6 @@ function typeWriter(element, text, delay = 100) {
 }
 
 let element = document.querySelector('.main-title');
-let text = 'Hi 👋 I am Zinaida, Frontend Developer';
+let text = ' I am Zinaida, Frontend Developer';
 
 typeWriter(element, text);

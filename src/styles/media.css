@@ -63,9 +63,9 @@
   }
 
   .works__item {
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 0;
+    /* flex-direction: column-reverse;
+    align-items: center; */
+    /* gap: 0; */
     width: calc((100% - (var(--offsets) * var(--gap))) / (var(--offsets) + 1));
     transition: gap 0.3s ease-in-out;
   }

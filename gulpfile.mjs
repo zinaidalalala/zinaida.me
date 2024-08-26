@@ -15,7 +15,7 @@ import sourceMaps from 'gulp-sourcemaps';
 import { deleteAsync } from 'del';
 
 const clean = () => {
-  return deleteAsync(['dist'])
+  return deleteAsync(['dist']);
 }
 
 const styles = () => {
@@ -26,27 +26,15 @@ const styles = () => {
     .pipe(cleanCss({ level: 2 }))
     .pipe(sourceMaps.write())
     .pipe(dest('dist'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 };
 
 const htmlMinify = () => {
   return src('src/**/*.html')
     .pipe(htmlMin({ collapseWhitespace: true }))
     .pipe(dest('dist'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 };
-
-// const svgSprites = () => {
-//   return src('src/images/svg/**/*.svg')
-//     .pipe(svgSprite({
-//       mode: {
-//         stack: {
-//           sprite: '../sprite.svg'
-//         }
-//       }
-//     }))
-//     .pipe(dest('dist/images'))
-// }
 
 const images = () => {
   return src([
@@ -70,21 +58,27 @@ const scripts = () => {
     .pipe(concat('app.js'))
     .pipe(terser().on('error', notify.onError()))
     .pipe(sourceMaps.write())
-    .pipe(dest('dist'))
-    .pipe(browserSync.stream())
+    .pipe(dest('dist/js'))
+    .pipe(browserSync.stream());
 }
 
 const toolScripts = () => {
   return src('src/js/lazyload.min.js')
-    .pipe(dest('dist'))
-    .pipe(browserSync.stream())
+    .pipe(dest('dist/js'))
+    .pipe(browserSync.stream());
+}
+
+const jsonFiles = () => {
+  return src('src/js/json/**/*.json')
+    .pipe(dest('dist/js/json'))
+    .pipe(browserSync.stream());
 }
 
 const minifyFonts = () => {
   return src('src/fonts/*', { encoding: false })
     .pipe(fontMin())
     .pipe(dest('dist/fonts'))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream());
 };
 
 const watchFiles = () => {
@@ -97,15 +91,15 @@ const watchFiles = () => {
   watch('src/**/*.html', htmlMinify);
   watch('src/styles/**/*css', styles);
   watch('src/images/**/*.{jpg,jpeg,png,svg,webp}', images);
-  // watch('src/images/svg/**/*.svg', svgSprites)
+  // watch('src/images/svg/**/*.svg', svgSprites);
   watch('src/js/**/*.js', scripts);
   watch('src/js/lazyload.min.js', toolScripts);
+  watch('src/js/json/**/*.json', jsonFiles);
   watch('src/fonts/**/*', minifyFonts);
 }
 
-export const dev = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts, watchFiles);
+export const dev = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts, jsonFiles, watchFiles);
 
-export const build = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts);
+export const build = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts, jsonFiles);
 
 export default dev;
-

@@ -172,7 +172,7 @@ p {
 /* hero */
 
 .hero {
-  padding: 40px 0;
+  padding: 0px 0 20px 0;
 }
 
 .main-title {
@@ -485,4 +485,54 @@ p {
   margin: 0;
   font-size: 1rem;
   color: #21243d;
+}
+
+/* language */
+
+.language-switcher {
+  margin-left: auto; /* Перемещаем блок в правый угол */
+  display: flex;
+  align-items: center;
+}
+
+.language-switcher select {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: var(--blue); /* Основной цвет фона */
+  color: var(--white); /* Цвет текста */
+  padding: 8px 12px;
+  border: 2px solid var(--light-blue); /* Обводка */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.language-switcher select:hover {
+  background-color: var(--light-blue); /* Изменение цвета фона при наведении */
+  border-color: var(--red); /* Изменение цвета обводки при наведении */
+}
+
+.language-switcher select:focus {
+  outline: none;
+  border-color: var(--red); /* Изменение цвета обводки при фокусе */
+}
+
+/*  */
+
+.header__nav {
+  display: flex;
+  justify-content: flex-end; /* Выровнять весь блок навигации и выбора языка вправо */
+  align-items: center;
+  gap: 20px; /* Задаем промежуток между меню и выбором языка */
+}
+
+.language-switcher {
+  margin-left: 0; /* Убираем auto, так как теперь используется flexbox */
+}
+
+.header__list {
+  display: flex;
+  gap: 33px; /* Задаем промежуток между элементами меню */
+  font-weight: 600;
 }

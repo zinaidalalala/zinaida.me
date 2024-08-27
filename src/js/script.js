@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 let element = document.querySelector('.main-title-span');
-let text = 'I am Zinaida, Frontend Developer'; // Изначальный текст для анимации
+let text = ' I am Zinaida, Frontend Developer'; // Изначальный текст для анимации
 let typewriterIntervalId; // Идентификатор интервала для анимации текста
 
 function typeWriter(element, text, delay = 100) {

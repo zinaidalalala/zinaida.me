@@ -379,6 +379,7 @@ p {
   height: auto;
   object-fit: cover;
   border-radius: 20px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .works__item:hover img {

@@ -13,10 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyTranslations(translations) {
-    document.querySelectorAll('[data-translate]').forEach(el => {
+    document.querySelectorAll('[data-translate]').forEach((el) => {
       const key = el.getAttribute('data-translate');
       if (translations[key]) {
-        el.textContent = translations[key];
+        // Replace \n\n with <br> for line breaks
+        const text = translations[key];
+        el.innerHTML = text;
       }
     });
 

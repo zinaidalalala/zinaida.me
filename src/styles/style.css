@@ -215,6 +215,7 @@ p {
   color: var(--blue);
   cursor: pointer;
   height: 120px;
+  max-width: 650px;
 }
 
 .hero__descr {

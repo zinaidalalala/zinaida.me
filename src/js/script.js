@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch(`./js/json/${lang}.json`);
       const translations = await response.json();
       applyTranslations(translations);
-      restartTypewriter(); // Запуск анимации текста после загрузки языка
+      restartTypewriter();
     } catch (error) {
       console.error('Error loading language:', error);
     }
@@ -16,44 +16,41 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-translate]').forEach((el) => {
       const key = el.getAttribute('data-translate');
       if (translations[key]) {
-        // Replace \n\n with <br> for line breaks
         const text = translations[key];
         el.innerHTML = text;
       }
     });
 
-    // Применение перевода к тексту для анимации
-    text = translations['main_title'] || text; // Используйте переведённый текст, если он доступен
+    text = translations['main_title'] || text;
   }
 
   function restartTypewriter() {
     if (element) {
-      element.innerHTML = ''; // Очистка содержимого элемента
-      typeWriter(element, text); // Запуск анимации текста заново
+      element.innerHTML = '';
+      typeWriter(element, text);
     }
   }
 
   function stopTypewriter() {
     if (typewriterIntervalId) {
-      clearInterval(typewriterIntervalId); // Остановка текущей анимации
-      typewriterIntervalId = null; // Сброс идентификатора интервала
+      clearInterval(typewriterIntervalId);
+      typewriterIntervalId = null;
     }
   }
 
   document.getElementById('languageSwitcher').addEventListener('change', function () {
     const selectedLanguage = this.value;
     localStorage.setItem('language', selectedLanguage);
-    stopTypewriter(); // Остановка текущей анимации текста
-    loadLanguage(selectedLanguage); // Загрузка нового языка
+    stopTypewriter();
+    loadLanguage(selectedLanguage);
   });
 
-  // Загружаем начальный язык при загрузке страницы
   loadLanguage(language);
 });
 
 let element = document.querySelector('.main-title-span');
-let text = ' I am Zinaida, Frontend Developer'; // Изначальный текст для анимации
-let typewriterIntervalId; // Идентификатор интервала для анимации текста
+let text = ' I am Zinaida, Frontend Developer';
+let typewriterIntervalId;
 
 function typeWriter(element, text, delay = 100) {
   let i = 0;
@@ -62,8 +59,8 @@ function typeWriter(element, text, delay = 100) {
       element.innerHTML += text.charAt(i);
       i++;
     } else {
-      clearInterval(typewriterIntervalId); // Остановка интервала после завершения анимации
-      typewriterIntervalId = null; // Сброс идентификатора интервала
+      clearInterval(typewriterIntervalId);
+      typewriterIntervalId = null; 
     }
   }, delay);
 }

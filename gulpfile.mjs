@@ -5,7 +5,6 @@ import htmlMin from 'gulp-htmlmin';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCss from 'gulp-clean-css';
 import browserSync from 'browser-sync';
-// import svgSprite from 'gulp-svg-sprite';
 import imagemin from 'gulp-image';
 import terser from 'gulp-terser';
 import babel from 'gulp-babel';
@@ -91,7 +90,6 @@ const watchFiles = () => {
   watch('src/**/*.html', htmlMinify);
   watch('src/styles/**/*css', styles);
   watch('src/images/**/*.{jpg,jpeg,png,svg,webp}', images);
-  // watch('src/images/svg/**/*.svg', svgSprites);
   watch('src/js/**/*.js', scripts);
   watch('src/js/lazyload.min.js', toolScripts);
   watch('src/js/json/**/*.json', jsonFiles);
@@ -99,7 +97,5 @@ const watchFiles = () => {
 }
 
 export const dev = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts, jsonFiles, watchFiles);
-
 export const build = series(clean, htmlMinify, styles, images, scripts, toolScripts, minifyFonts, jsonFiles);
-
 export default dev;
